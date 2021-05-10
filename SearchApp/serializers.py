@@ -1,18 +1,19 @@
 from rest_flex_fields import FlexFieldsModelSerializer
-from .models import Lost_Item_City, Lost_Item_Category, PostSearch
+from SelectChoice.models import Item_City, Item_Category
+from .models import PostSearch
 from Account import AccountSerializers
 
 
 class Lost_Item_City_Serializer(FlexFieldsModelSerializer):
     """serialize the lost_city model"""
     class Meta:
-        model = Lost_Item_City
+        model = Item_City
         fields = ['city']
 
 class Lost_Item_Category_Serializer(FlexFieldsModelSerializer):
     """serialize the lost_category model"""
     class Meta:
-        model = Lost_Item_Category
+        model = Item_Category
         fields = ['category']
 
 class PostSearchSerializer(FlexFieldsModelSerializer):

@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'Account',
     'SearchApp',
+    'FounderApp',
+    'SelectChoice',
     'django_filters',
 ]
 
