@@ -20,7 +20,7 @@ class PostFound(models.Model):
     item_picture = models.ImageField(
         max_length=None,
         upload_to='found_item_pic/',
-        default=''
+        default='',
     )
     name_on_item = models.CharField(max_length=255)
     picking_location = models.CharField(max_length=255)

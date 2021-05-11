@@ -1,0 +1,4 @@
+/searchapp/lost_items/?fields=category : list only the category
+/ / /?expand=city_lost : expand the city_lost field (which is a foreignkey)
+/ / //expand=category&omit=city : expand the category field and exlude the city
+as for filter, there's a filter button on the browsable api.
