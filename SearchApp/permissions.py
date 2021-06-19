@@ -1,4 +1,5 @@
 from rest_framework import permissions
+from . import views
 
 class Search_Item_Permissions(permissions.BasePermission):
     """Allow the user to only edit his own post"""

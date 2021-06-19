@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-#pp^l_$1%k6(^3eas$z*yn@7ga$=^8j9gonyeoh@y=5wn9q6fa
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.56.1']
 
 
 # Application definition
@@ -46,16 +46,34 @@ INSTALLED_APPS = [
     'FounderApp',
     'SelectChoice',
     'django_filters',
+    'corsheaders',
 ]
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:19002",
+    # "http://127.0.0.1:9000",
+    'https://192.168.56.1',
+]
+#
+
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS':
-['django_filters.rest_framework.DjangoFilterBackend']
+        ['django_filters.rest_framework.DjangoFilterBackend'],
+
+    # 'DEFAULT_PARSER_CLASSES': (
+    #     'rest_framework.parsers.JSONParser',
+    #     'rest_framework.parsers.FormParser',
+    #     'rest_framework.parsers.MultiPartParser',
+    # )
+
 }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',

@@ -19,6 +19,19 @@ class UserProfileManager(BaseUserManager):
 
         return user
 
+    # def create_user(self, phone, name, location, profile_picture, password=None):
+    #     """Create a new user profile"""
+    #     user = self.model(
+    #             phone=phone,
+    #             name=name,
+    #             location=location,
+    #             profile_picture=profile_picture,
+    #         )
+    #     user.set_password(password)
+    #     user.save(using=self._db)
+    #
+    #     return user
+
     def create_superuser(self, phone, name, password):
         """Create a superuser"""
         user = self.model(
@@ -43,7 +56,9 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     profile_picture = models.ImageField(
                     max_length=None,
                     upload_to='profile_pics/',
-                    default='',
+                    default=None,
+                    blank=True,
+                    null=True
                 )
 
     is_active = models.BooleanField(default=True)
