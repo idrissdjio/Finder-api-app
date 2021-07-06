@@ -27,6 +27,19 @@ class UserSerializers(FlexFieldsModelSerializer):
 
         return user
 
+    def update(self, instance, validated_data):
+        """"update user profile without changing the password"""
+
+        instance.phone = validated_data['phone']
+        instance.name = validated_data['name']
+        instance.location = validated_data['location']
+        instance.profile_picture = validated_data['profile_picture']
+        instance.set_password(validated_data['password'])
+
+        instance.save()
+
+        return instance
+
 
 # class UserSerializers(serializers.ModelSerializer):
 #     """serialize the user model"""
