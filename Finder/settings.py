@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-#pp^l_$1%k6(^3eas$z*yn@7ga$=^8j9gonyeoh@y=5wn9q6fa
 # DEBUG = True
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['https://finder-api-app.herokuapp.com/',]
+ALLOWED_HOSTS = ['https://finder-api-app.herokuapp.com/']
 # '192.168.56.1'
 
 
