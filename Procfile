@@ -1,1 +1,1 @@
-web: gunicorn Finder.wsgi --log-file -
+web: gunicorn finder-api-app.wsgi --log-file -
