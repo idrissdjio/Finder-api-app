@@ -109,10 +109,15 @@ WSGI_APPLICATION = 'Finder.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dbrh0ln8m5oe87',
+        'HOST': 'ec2-52-45-183-77.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'aamzhqfukevquo',
+        'PASSWORD': '45e71397f5ca44fe793ef13a8cb9f9d55408c747aa5265755a4994395915c67b'
     }
 }
+# postgres://aamzhqfukevquo:45e71397f5ca44fe793ef13a8cb9f9d55408c747aa5265755a4994395915c67b@ec2-52-45-183-77.compute-1.amazonaws.com:5432/dbrh0ln8m5oe87
 
 # DATABASES = {
 #     'default': dj_database_url.config(
