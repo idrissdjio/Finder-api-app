@@ -34,26 +34,3 @@ class SearchViewSet(FlexFieldsModelViewSet):
             queryset = queryset.select_related('user_profile')
 
         return queryset
-
-    # def perform_create(self, serializer):
-    #     serializer.save(item_picture=self.request.data.get('item_picture'),
-    #         name_on_the_item=self.request.data.get('name_on_the_item'),
-    #         description_of_item=self.request.data.get('description_of_item'),
-    #         contact=self.request.data.get('contact'),
-    #         date_lost=self.request.data.get('date_lost'),
-    #         create_on=self.request.data.get('create_on'),
-    #         user_profile=self.request.data.get('user_profile'),
-    #         category_item=self.request.data.get('category_item'),
-    #         city_item=self.request.data.get('city_item'))
-
-
-    # def list(self, request):
-    #     queryset = PostSearch.objects.all()
-    #     serializer = PostSearchSerializer(queryset, many=True)
-    #     return Response(serializer.data)
-    #
-    # def retrieve(self, request, pk=None):
-    #     queryset = PostSearch.objects.all()
-    #     item = get_object_or_404(queryset, pk=pk)
-    #     serializer = PostSearchSerializer(item)
-    #     return Response(serializer.data)
