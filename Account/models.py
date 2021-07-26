@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.contrib.auth.models import PermissionsMixin
+from cloudinary.models import CloudinaryField
 
 
 class UserProfileManager(BaseUserManager):
@@ -53,13 +54,14 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     name = models.CharField(max_length=255)
     phone = models.CharField(max_length=255, unique=True)
     location = models.CharField(max_length=255, default='')
-    profile_picture = models.ImageField(
-                    max_length=None,
-                    upload_to='profile_pics/',
-                    default=None,
-                    blank=True,
-                    null=True
-                )
+    # profile_picture = models.ImageField(
+    #                 max_length=None,
+    #                 upload_to='profile_pics/',
+    #                 default=None,
+    #                 blank=True,
+    #                 null=True
+    #             )
+    profile_picture = CloudinaryField('image')
 
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)

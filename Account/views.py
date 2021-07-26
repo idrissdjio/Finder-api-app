@@ -12,6 +12,7 @@ from .AccountSerializers import UserSerializers
 from .models import UserProfile
 from .permissions import UpdateOwnProfile
 
+
 class UserViewSet(FlexFieldsModelViewSet):
     """User ViewSet for adding and edit user instances"""
     serializer_class = UserSerializers
