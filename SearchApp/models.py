@@ -2,7 +2,7 @@ from django.db import models
 from django.conf import settings
 from SelectChoice.models import Item_City, Item_Category
 from django.utils.timezone import now
-from cloudinary.models import CloudinaryField
+# from cloudinary.models import CloudinaryField
 
 import base64
 
@@ -12,12 +12,12 @@ class PostSearch(models.Model):
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
     )
-    # item_picture = models.CloudinaryField(
-    #     max_length=None,
-    #     upload_to='lost_item_pics/',
-    #     default=''
-    # )
-    item_picture = CloudinaryField('image')
+    item_picture = models.ImageField(
+        max_length=None,
+        upload_to='lost_item_pics/',
+        default=''
+    )
+    # item_picture = CloudinaryField('image')
     # category = models.ForeignKey(
     #     Item_Category,
     #     on_delete=models.CASCADE,
