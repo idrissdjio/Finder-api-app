@@ -17,7 +17,7 @@ from pathlib import Path
 import os
 
 
-# import cloudinary
+import cloudinary
 # import cloudinary.uploader
 # import cloudinary.api
 
