@@ -17,7 +17,8 @@ from pathlib import Path
 import os
 
 
-# import cloudinary
+
+import cloudinary_storage
 # import cloudinary.uploader
 # import cloudinary.api
 
@@ -50,7 +51,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cloudinary',
 
     'rest_framework',
     'rest_framework.authtoken',
@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'SelectChoice',
     'django_filters',
     'corsheaders',
+    'cloudinary_storage',
 ]
 
 CORS_ALLOWED_ORIGINS = [
@@ -184,7 +185,12 @@ AUTH_USER_MODEL = 'Account.UserProfile'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': "dzktpx7yi",
+    "API_KEY": "983911319931848",
+    "API_SECRET": "ngcW0Z25EbGrViu2AjZ9h_H4mbE"
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # cloudinary.config(
 #   cloud_name = "dzktpx7yi",
 #   api_key = "983911319931848",
